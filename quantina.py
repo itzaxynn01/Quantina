@@ -4,6 +4,7 @@ import json
 import asyncio
 from asyncio import sleep as s
 from datetime import datetime
+import keep_alive
 # Get configuration.json
 with open("configuration.json", "r") as config:
     data = json.load(config)
@@ -64,6 +65,6 @@ async def reminder(ctx,time:int,*,msg):
         await s(time)
         await ctx.send(f'{msg} {ctx.author.mention}')
     
-
+keep_alive.keep_alive()
 #running the bot through config.json
 bot.run(token)
