@@ -1,0 +1,12 @@
+  _THIS PROJECT IS UNDER DEVELOPMENT_  
+
+
+*To Make This Code Run Follow Steps
+
+INSTALL REQUIRED_DEPENDENCIES
+1- DISCORD.PY (CURRENT VERSION)
+
+
+NOW, CREATE A JSON FILE NAMED "configuration.json"
+
+You,Are All Set To Go
