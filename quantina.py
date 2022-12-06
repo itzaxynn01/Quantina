@@ -15,6 +15,7 @@ bot = commands.Bot(prefix, intents = discord.Intents.all())
 # Load cogs
 extensions = [
     "commands.general_commands",
+    "auto.messages",
     "commands.moderation",
     "commands.fun_commands",
     "commands.help",
