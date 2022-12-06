@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import asyncio
-
+from asyncio import sleep as s
 from datetime import datetime
 # Get configuration.json
 with open("configuration.json", "r") as config:
@@ -56,9 +56,13 @@ async def runtime(ctx):
     hours, minutes = divmod(minutes, 60)
     await ctx.send("Running For {}d {}h {}m {}s".format(elapsed.days, hours, minutes, seconds))
 starttime = datetime.utcnow()
-
-
-
+#reminder command
+@bot.command()
+async def reminder(ctx,time:int,*,msg):
+    while True:
+        await s(time)
+        await ctx.send(f'{msg} {ctx.author.mention}')
+    
 
 #running the bot through config.json
 bot.run(token)
