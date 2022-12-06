@@ -65,6 +65,8 @@ async def reminder(ctx,time:int,*,msg):
         await s(time)
         await ctx.send(f'{msg} {ctx.author.mention}')
     
-keep_alive.keep_alive()
+
+
+#keep_alive.keep_alive()
 #running the bot through config.json
 bot.run(token)

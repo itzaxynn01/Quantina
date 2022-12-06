@@ -9,7 +9,7 @@ class Welcome(commands.Cog, name='Welcomer'):
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
-        role = discord.utils.get(member.guild.roles , name = 'pirats')
+        role = discord.utils.get(member.guild.roles , name ="╭──╯…..P I R A T E S.....╰┈➤")
         channel = self.bot.get_channel(1046890501321805834)
         embed = discord.Embed(description=f'HI {member.mention} , Welcome to the guild!' , color=+0x0bf9f9)
         await member.add_roles(role)
