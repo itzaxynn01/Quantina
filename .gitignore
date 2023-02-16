@@ -1,1 +1,3 @@
-./configuration.json
+/configuration.json
+/run.bat
+/.gitignore
