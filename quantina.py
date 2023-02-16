@@ -2,9 +2,8 @@ import discord
 from discord.ext import commands
 import json
 import asyncio
-from asyncio import sleep as s
+
 from datetime import datetime
-import keep_alive
 # Get configuration.json
 with open("configuration.json", "r") as config:
     data = json.load(config)
@@ -16,15 +15,13 @@ bot = commands.Bot(prefix, intents = discord.Intents.all())
 # Load cogs
 extensions = [
     "commands.general_commands",
-    "auto.messages",
     "commands.moderation",
     "commands.fun_commands",
     "commands.help",
     "admins.dm",
     "auto.welcome",
     "commands.spam",
-    "commands.specialcommands",
-    "commands.basiccommands",
+
 ]
 
 print(extensions)
@@ -47,7 +44,9 @@ async def on_ready():
                 print(f"Failed to load extension {extension}")
                 await asyncio.sleep(0.111)
 
-
+'''
+-> admin previlage commands 
+'''
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def runtime(ctx):
@@ -58,15 +57,9 @@ async def runtime(ctx):
     hours, minutes = divmod(minutes, 60)
     await ctx.send("Running For {}d {}h {}m {}s".format(elapsed.days, hours, minutes, seconds))
 starttime = datetime.utcnow()
-#reminder command
-@bot.command()
-async def reminder(ctx,time:int,*,msg):
-    while True:
-        await s(time)
-        await ctx.send(f'{msg} {ctx.author.mention}')
-    
 
 
-#keep_alive.keep_alive()
+
+
 #running the bot through config.json
 bot.run(token)

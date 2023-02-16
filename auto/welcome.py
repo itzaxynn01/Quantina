@@ -9,15 +9,15 @@ class Welcome(commands.Cog, name='Welcomer'):
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
-        role = discord.utils.get(member.guild.roles , name ="╭──╯…..P I R A T E S.....╰┈➤")
-        channel = self.bot.get_channel(1046890501321805834)
+        role = discord.utils.get(member.guild.roles , name = 'Welcome role')
+        channel = self.bot.get_channel(1041765613464461382)
         embed = discord.Embed(description=f'HI {member.mention} , Welcome to the guild!' , color=+0x0bf9f9)
         await member.add_roles(role)
         await channel.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_remove(self,member):
-        channel = self.bot.get_channel(1047124270083473478)
+        channel = self.bot.get_channel(1041765613464461382)
         embed = discord.Embed(description=f"{member.mention , member.name} just left the guild")
         await channel.send(embed=embed)
 
